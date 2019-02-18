@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="m-3"></div>
+
+  <div *ngFor="let category of categoryService.categories" class="category-section">
+    <div class="category-title">{{category.name}}<button [routerLink]="['/category', category.id]" type="button" class="btn btn-link">查看更多</button></div>
+    <div class="vertical-line"></div>
+    <div *ngFor="let book of (books | bookCategoryFilter:category)" class="card mr-3 my-2" style="display: inline-block;">
+      <img [routerLink]="['/book', book.id]" class="card-img-top" src="{{book.cover}}" alt="Card image cap" style="cursor: pointer; width: 15rem; height: 20rem; ">
+    </div>
+  </div>
+</div>

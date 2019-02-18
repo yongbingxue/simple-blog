@@ -1,0 +1,12 @@
+.category-section {
+  margin: 1rem 0;
+}
+
+.category-title {
+  font-size: 1.5rem;
+}
+
+.vertical-line {
+  border: 1px solid #DDD;
+  margin-bottom: 1px;
+}

@@ -1,0 +1,100 @@
+<databaseChangeLog
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+  <!-- Category -->
+  <changeSet author="yongbingxue" id="Category_createTable">
+    <createTable tableName="Category">
+      <column name="id" type="BIGINT" autoIncrement="true">
+        <constraints primaryKey="true" nullable="false"/>
+      </column>
+      <column name="createdTime" type="TIMESTAMP" defaultValueDate="CURRENT_TIMESTAMP">
+        <constraints nullable="false"/>
+      </column>
+      <column name="deleted" type="TINYINT" defaultValueBoolean="false">
+        <constraints nullable="false"/>
+      </column>
+      <column name="version" type="INT" defaultValueNumeric="1">
+        <constraints nullable="false"/>
+      </column>
+      <!-- -->
+      <column name="name" type="VARCHAR(255)">
+        <constraints nullable="false"/>
+      </column>
+      <column name="priority" type="INT">
+        <constraints nullable="false"/>
+      </column>
+    </createTable>
+  </changeSet>
+
+  <!-- Book -->
+  <changeSet author="yongbingxue" id="Book_createTable">
+    <createTable tableName="Book">
+      <column name="id" type="BIGINT" autoIncrement="true">
+        <constraints primaryKey="true" nullable="false"/>
+      </column>
+      <column name="createdTime" type="TIMESTAMP" defaultValueDate="CURRENT_TIMESTAMP">
+        <constraints nullable="false"/>
+      </column>
+      <column name="deleted" type="TINYINT" defaultValueBoolean="false">
+        <constraints nullable="false"/>
+      </column>
+      <column name="version" type="INT" defaultValueNumeric="1">
+        <constraints nullable="false"/>
+      </column>
+      <!-- -->
+      <column name="author" type="VARCHAR(255)">
+        <constraints nullable="false"/>
+      </column>
+      <column name="cover" type="VARCHAR(255)">
+        <constraints nullable="false"/>
+      </column>
+      <column name="description" type="TEXT">
+        <constraints nullable="false"/>
+      </column>
+      <column name="name" type="VARCHAR(255)">
+        <constraints nullable="false"/>
+      </column>
+      <column name="priority" type="INT">
+        <constraints nullable="false"/>
+      </column>
+      <!-- -->
+      <column name="category_id" type="BIGINT">
+        <constraints nullable="false" foreignKeyName="fk_Book_Category" references="Category(id)"/>
+      </column>
+    </createTable>
+  </changeSet>
+
+  <!-- Chapter -->
+  <changeSet author="yongbingxue" id="Chapter_createTable">
+    <createTable tableName="Chapter">
+      <column name="id" type="BIGINT" autoIncrement="true">
+        <constraints primaryKey="true" nullable="false"/>
+      </column>
+      <column name="createdTime" type="TIMESTAMP" defaultValueDate="CURRENT_TIMESTAMP">
+        <constraints nullable="false"/>
+      </column>
+      <column name="deleted" type="TINYINT" defaultValueBoolean="false">
+        <constraints nullable="false"/>
+      </column>
+      <column name="version" type="INT" defaultValueNumeric="1">
+        <constraints nullable="false"/>
+      </column>
+      <!-- -->
+      <column name="name" type="VARCHAR(255)">
+        <constraints nullable="false"/>
+      </column>
+      <column name="priority" type="INT">
+        <constraints nullable="false"/>
+      </column>
+      <!-- -->
+      <column name="book_id" type="BIGINT">
+        <constraints nullable="false" foreignKeyName="fk_Chapter_Book" references="Book(id)"/>
+      </column>
+    </createTable>
+  </changeSet>
+
+</databaseChangeLog>

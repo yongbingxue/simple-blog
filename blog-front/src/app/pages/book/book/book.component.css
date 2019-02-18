@@ -1,0 +1,29 @@
+.blog-sidebar {
+  position: fixed;
+  top: 56px;
+  bottom: 0;
+  left: 0;
+  padding: 0;
+  min-width: 260px;
+  background-color: #fafafa;
+  box-shadow: 6px 0 6px rgba(0, 0, 0, .1);
+}
+
+.blog-links {
+  margin-left: 1rem;
+}
+
+.blog-links .blog-toc-item {
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.blog-toc-item a {
+  cursor: pointer;
+  color: #6e6e6e;
+  font-family: Roboto, "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+.blog-toc-item a.selected {
+  color: #1976d2;
+}

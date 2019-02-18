@@ -1,0 +1,17 @@
+<div class="container-fluid">
+  <div class="row flex-xl-nowrap">
+    <div class="col-12 col-md-3 col-xl-2 blog-sidebar">
+      <nav class="blog-links">
+        <div *ngFor="let chapter of chapters$ | async" class="blog-toc-item">
+          <a class="blog-toc-link">
+            {{chapter.name}}
+          </a>
+        </div>
+      </nav>
+    </div>
+
+    <main class="col-12 offset-md-3 col-md-9 offset-xl-4 col-xl-8 blog-content" role="main">
+      <h1 class="bd-title" id="content"></h1>
+    </main>
+  </div>
+</div>

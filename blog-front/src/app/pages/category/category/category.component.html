@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="m-3"></div>
+
+  <div class="category-section">
+    <div class="category-title"></div>
+    <div class="vertical-line"></div>
+    <div *ngFor="let book of books$ | async" class="card mr-3 my-2" style="display: inline-block;">
+      <img [routerLink]="['/book', book.id]" class="card-img-top" src="{{book.cover}}" style="cursor: pointer; width: 15rem; height: 20rem; " alt="Card image cap">
+    </div>
+  </div>
+</div>
